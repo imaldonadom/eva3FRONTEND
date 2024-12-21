@@ -23,7 +23,7 @@
                 </li>
                 <li><a href="#banner">Inicio</a></li>
                 <li><a href="#productos">Productos</a></li>
-                <li><a href="#contacto">Contact</a></li>
+                <li><a href="#contacto">Contacto</a></li>
             </ul>
         </nav>
     </header>
@@ -91,23 +91,43 @@
 <script src="script.js"></script>
 
 
+<!-- Conteacto -->
+
+<!-- Contacto -->
+<section id="contacto" class="contacto">
+    <h2>Contactos</h2>
+
+            <div class="intro-box">
+                <p class="intro-text">
+                    Visita nuestra redes sociales:
+                </p>
+            </div>
+
+    <div class="social-links">
+        <a href="https://wa.me/+56999988026" target="_blank">
+            <img src="imagen/rs1.png" alt="WhatsApp">
+        </a>
+        <a href="https://www.facebook.com/La_Chomba_FB" target="_blank">
+            <img src="imagen/rs2.png" alt="Facebook">
+        </a>
+        <a href="https://www.instagram.com/la_chomba" target="_blank">
+            <img src="imagen/rs3.png" alt="Instagram">
+        </a>
+    </div>
+</section>
 
 
-    <section id="contacto" class="contacto">
-        <h2>Contact Us</h2>
-        <form class="contact-form">
-            <input type="text" placeholder="Your Name">
-            <input type="email" placeholder="Your Email">
-            <textarea placeholder="Your Message"></textarea>
-            <button type="submit">Send</button>
-        </form>
-    </section>
-
-    <!-- Footer -->
-    <footer>
+<!-- Footer -->
+<footer class="footer">
+    <div class="footer-content">
         <p>&copy; 2024 La Chomba. All Rights Reserved.</p>
-    </footer>
-
+        <div class="footer-links">
+            <a href="#productos">Productos</a>
+            <a href="#contacto">Contacto</a>
+            <a href="https://www.facebook.com/tu_pagina" target="_blank">Facebook</a>
+        </div>
+    </div>
+</footer>
 
     
 </body>
