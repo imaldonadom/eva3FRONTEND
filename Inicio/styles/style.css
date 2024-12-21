@@ -1,92 +1,284 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 body {
     font-family: Arial, sans-serif;
-    margin: 0;
-    padding: 0;
-    line-height: 1.6;
-    background: #fdfdfd;
+    scroll-behavior: smooth; /* Desplazamiento suave */
+    background-color: rgb(153, 109, 117);
+    color: white;
 }
 
-.container {
-    width: 90%;
-    margin: auto;
-    overflow: hidden;
-}
-
+/* Header */
 .main-header {
-    background: #f4f4f4;
-    color: #333;
-    padding: 10px 0;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(153, 109, 117, 0.9);
+    z-index: 1000;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    padding: 5px 0; /* Mantiene una barra delgada */
+    text-align: center;
 }
 
-.main-header .logo {
-    float: left;
-}
-
-.main-header .navigation {
-    float: right;
-}
-
-.main-header .navigation ul {
+.main-header nav ul {
     list-style: none;
-    margin: 0;
-    padding: 0;
-}
-
-.main-header .navigation ul li {
-    display: inline;
-    margin-right: 15px;
-}
-
-.hero {
-    background: #eaeaea;
-    padding: 30px 0;
-    text-align: center;
-}
-
-.hero h2 {
-    font-size: 2.5em;
-}
-
-.hero .btn {
-    display: inline-block;
-    margin-top: 10px;
-    padding: 10px 20px;
-    background: #333;
-    color: #fff;
-    text-decoration: none;
-}
-
-.collection, .new-collection {
-    padding: 20px 0;
-    text-align: center;
-}
-
-.collection h2, .new-collection h2 {
-    margin-bottom: 20px;
-}
-
-.products {
     display: flex;
-    justify-content: space-around;
-    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; /* Centra los elementos verticalmente */
+    gap: 20px; /* Espacio uniforme entre enlaces */
+    padding: 0;
+    margin: 0;
+    height: 50px; /* Altura uniforme para la barra */
 }
 
-.product {
-    width: 30%;
-    margin: 15px 0;
-    background: #fff;
-    padding: 10px;
-    border: 1px solid #ddd;
+.main-header nav ul li {
+    display: flex;
+    align-items: center; /* Centra verticalmente el contenido dentro del <li> */
+    height: 100%; /* Asegura que los <li> ocupen toda la altura */
+}
+
+.main-header nav ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: bold;
+    padding: 10px 20px;
+    transition: background 0.3s ease, color 0.3s ease;
+    display: inline-block;
+    line-height: normal; /* Evita desajustes por el alto de línea */
+}
+
+.main-header nav ul li a:hover {
+    background: white;
+    color: rgb(153, 109, 117);
+    border-radius: 5px;
+}
+
+
+
+/* Section General */
+section {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    padding: 20px;
+}
+
+/* Banner Section */
+.banner {
+    position: relative;
+    background-color: rgb(153, 109, 117); /* Fondo para fallback */
+    color: white;
+    padding: 50px 20px;
+}
+
+/* Título del Banner */
+.banner h1 {
+    font-size: 80px;
+    font-family: "Dancing Script", serif;
+    color: white;
+    margin: 20px 0 10px 0; /* Espacio superior dinámico y margen inferior */
+    text-align: center; /* Asegura que el texto esté centrado horizontalmente */
+}
+
+
+/* Cuadro de Texto para Introducción */
+.intro-box {
+    background: rgba(240, 240, 227, 0.9); /* Fondo claro con transparencia */
+    color: rgb(153, 109, 117);
+    padding: 20px;
+    border: 2px solid rgb(203, 151, 159); /* Borde decorativo */
+    border-radius: 10px; /* Esquinas redondeadas */
+    max-width: 800px; /* Ancho máximo del cuadro */
+    margin: 20px auto 30px; /* Espaciado superior e inferior */
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra */
+}
+
+/* Texto de Introducción */
+.intro-text {
+    font-size: 20px;
+    font-family: "Dancing Script", serif;
+    line-height: 1.8;
+    margin: 0;
     text-align: center;
 }
 
-.product img {
+/* Carrusel */
+/* Configuración del carrusel */
+.carousel {
+    margin-top: 30px; /* Espaciado superior */
+    max-width: 1200px; /* Ancho máximo */
+    width: 100%; /* Ocupa todo el ancho disponible */
+    overflow: hidden; /* Evita contenido desbordado */
+}
+
+/* Configuración del carrusel */
+.carousel-inner {
+    display: center;
+    justify-content: center; /* Centra la imagen horizontalmente */
+    align-items: center; /* Centra la imagen verticalmente */
+}
+
+.carousel-inner img {
+    width: auto; /* Permite que el ancho se ajuste automáticamente */
+    height: 100%; /* Asegura que la imagen ocupe toda la altura del contenedor */
+    max-height: 500px; /* Evita que la imagen exceda la altura máxima */
+    object-fit: contain; /* Ajusta la imagen sin recortes ni deformaciones */
+    display: block; /* Garantiza que la imagen sea un bloque independiente */
+    margin: auto; /* Centra la imagen en su contenedor */
+}
+
+  
+
+/* Estilo para la sección de productos */
+.productos {
+    background: rgb(240, 240, 227); /* Fondo de la sección */
+
+    color: rgb(203, 151, 159); /* Color del texto */
+    padding: 50px 20px;
+    text-align: center; /* Centra el texto */
+}
+
+.productos h2 {
+    font-size: 80px;
+    font-family: "Dancing Script", serif;
+    color: rgb(203, 151, 159);
+    margin: 20px 0 10px 0; /* Espacio superior dinámico y margen inferior */
+    text-align: center; /* Asegura que el texto esté centrado horizontalmente */
+}
+
+/* PRODUCTO */
+
+/* Estilo general */
+#productos {
+    padding: 30px;
+    text-align: center;
+    background-color: #f9f9f9;
+    border-top: 5px solid rgb(203, 151, 159);
+    border-bottom: 5px solid rgb(203, 151, 159);
+}
+
+/* Encabezado */
+#productos h2 {
+    font-family: "Dancing Script", serif; /* Fuente estilizada */
+    font-size: 80px; /* Tamaño de la fuente */
+    font-weight: bold; /* Aumenta el grosor de la fuente */
+    color: rgb(203, 151, 159); /* Color principal */
+    text-transform: capitalize; /* Capitaliza la primera letra */
+    letter-spacing: 1px; /* Espaciado sutil entre letras */
+    margin-bottom: 10px; /* Espaciado inferior */
+    display: inline-block; /* Asegura que se comporte como un bloque en línea */
+    padding-bottom: 10px; /* Espaciado interno inferior */
+    position: relative; /* Requerido para el diseño decorativo */
+}
+
+/* Contenedor principal */
+.contenedor-productos {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 10px;
+}
+
+/* Fondo (chomba1 y chomba2) */
+.fondo {
+    flex: 1;
+    text-align: center;
+}
+
+.fondo img {
     max-width: 100%;
+    height: auto;
 }
 
-.main-footer {
+/* Imágenes de productos */
+.fotos {
+    display: flex;
+    gap: 60px;
+    flex: 2;
+    justify-content: center;
+}
+
+.foto-container img {
+    width: 150px;
+    height: auto;
+    border: 3px solid rgb(203, 151, 159);
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Efecto hover */
+.foto-container img:hover {
+    transform: scale(1.1);
+    box-shadow: 0 6px 8px rgba(0, 0, 0, 0.2);
+}
+
+/* Imagen ampliada al hacer clic */
+.foto-container img.zoom {
+    position: relative;
+    transform: scale(3); /* Amplía la imagen al doble */
+    z-index: 10; /* Asegura que la imagen esté en el frente */
+    transition: transform 0.3s ease-in-out;
+    box-shadow: 0 8px 10px rgba(0, 0, 0, 0.3);
+}
+
+
+
+
+/* CONTACTO */
+.contacto {
+    background: rgb(153, 109, 117);
+    color: white;
+    padding: 50px 20px;
+}
+
+.contact-form {
+    margin: auto;
+    max-width: 400px;
+    background: white;
+    color: rgb(153, 109, 117);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1); /* Sombra decorativa */
+}
+
+.contact-form input,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid rgb(153, 109, 117);
+    border-radius: 5px;
+}
+
+.contact-form button {
+    background: rgb(203, 151, 159);
+    color: white;
+    padding: 10px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    width: 100%;
+    transition: background 0.3s ease;
+}
+
+.contact-form button:hover {
+    background: rgb(118, 85, 90);
+}
+
+/* Footer */
+footer {
+    background: rgb(153, 109, 117);
+    color: white;
+    padding: 20px;
     text-align: center;
-    padding: 10px 0;
-    background: #333;
-    color: #fff;
 }
